@@ -1,0 +1,43 @@
+<div class="row justify-content-center mt-5 mr-0">
+  <div class="card col-4">
+    <div class="p-4">
+      <div class="text-center mb-4"></div>
+      <h1 class="mb-3 text-18">Sign In</h1>
+      <form [formGroup]="signinForm" (ngSubmit)="signin()">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            class="form-control form-control-rounded"
+            formControlName="email"
+            type="email"
+          />
+          <div
+            class="text-danger"
+            *ngIf="signinForm.controls['email']?.errors?.invalidEmail"
+          >
+            in valid email
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            class="form-control form-control-rounded"
+            formControlName="password"
+            type="password"
+          />
+          <div
+            class="text-danger"
+            *ngIf="signinForm.controls['password']?.errors?.invalidPassword"
+          >
+            in valid passsword
+          </div>
+        </div>
+        <button class="btn btn-rounded btn-primary btn-block mt-2">
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
